@@ -6,6 +6,7 @@ on:
       - master
     paths:
       - "packages/container/**"
+  workflow_dispatch:  # 👈 Allows manual trigger from GitHub UI
 
 defaults:
   run:
@@ -25,4 +26,4 @@ jobs:
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_DEFAULT_REGION: ""
+          AWS_DEFAULT_REGION: "us-east-1"  # Set your AWS region
